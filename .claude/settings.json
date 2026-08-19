@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"d:\\\\Studies\\\\Diplom\"; $env:PYTHONIOENCODING='utf-8'; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" run_pk.py 2>&1 | Select-Object -Last 34)",
+      "PowerShell(cd \"d:\\\\Studies\\\\Diplom\"; $env:PYTHONIOENCODING='utf-8'; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" validate_gost.py)"
+    ]
+  }
+}

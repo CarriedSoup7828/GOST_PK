@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"d:\\\\Studies\\\\Diplom\"; $env:PYTHONIOENCODING='utf-8'; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" run_pk.py 2>&1 | Select-String -Pattern \"ШАГ 3\" -Context 0,12; Write-Output \"-----\"; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" run_pk.py 2>&1 | Select-String -Pattern \"ШАГ 10\" -Context 0,12)",
+      "PowerShell(cd \"d:\\\\Studies\\\\Diplom\"; $env:PYTHONIOENCODING='utf-8'; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" tests\\\\test_gost.py 2>&1 | Select-Object -Last 4; Write-Output \"===== pytest =====\"; & \"d:\\\\Studies\\\\Diplom\\\\env\\\\Scripts\\\\python.exe\" -m pytest tests/test_gost.py -q 2>&1 | Select-Object -Last 8)"
+    ]
+  }
+}
