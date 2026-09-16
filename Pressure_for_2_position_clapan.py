@@ -63,7 +63,7 @@ V_total = 1.30; fill_fraction = 0.18; Q_dot = 20000.0
 t_end = 40.0; dt = 1e-3
 
 # ================= Клапан =================
-d_c = 0.008; F_c = np.pi*d_c**2/4
+d_c = 0.032; F_c = np.pi*d_c**2/4
 m = 0.5; eta = 30.0
 P_open = 1.22e5; P_full = 1.34e5
 h_max = 0.25*d_c; h_stop = 0.30*d_c
