@@ -68,7 +68,7 @@ def default_case():
     case = ValveCase(
         fluid='Nitrogen',
         T1=130,                     # перегретый пар: Тнас(Р1) ~ 98 К + 20 К
-        Q_heat=3_000.0,
+        Q_heat=30000.0,
         P_n_g=5.0e5,
         P_work_g=3.0e5,
         P_design_g=6.0e5,
