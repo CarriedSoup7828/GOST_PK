@@ -29,13 +29,13 @@ def G_valve(P, h, F_c, d_c, rho_g):
     return float(alpha_c(max(h/d_c, 0.0))) * F_c * eps * np.sqrt(2 * P * rho_g)
 
 # ================= Параметры системы =================
-V_total = 1.30; fill_fraction = 0.18; Q_dot = 20000.0 # Увеличен теплоприток для наглядности
+V_total = 1.30; fill_fraction = 0.18; Q_dot = 5000.0 # Увеличен теплоприток для наглядности
 t_end = 500.0
 
 # ================= НАСТРОЙКА ДАВЛЕНИЙ =================
-P_init = 1.0 * 1e5    # Начальное давление в резервуаре (5 бар)
-P_open = 1.22 * 1e5    # Давление открытия клапана (6 бар)
-P_full = 1.34 * 1e5    # Давление полного открытия (обычно +10% от P_open)
+P_init = 4.0 * 1e5    # Начальное давление в резервуаре (5 бар)
+P_open = 4.22 * 1e5    # Давление открытия клапана (6 бар)
+P_full = 4.34 * 1e5    # Давление полного открытия (обычно +10% от P_open)
 
 # ================= Клапан =================
 d_c = 0.032; F_c = np.pi*d_c**2/4
@@ -43,7 +43,7 @@ m = 0.5; eta = 30.0
 h_max = 0.25*d_c; h_stop = 0.30*d_c
 
 # Пружина должна быть более жесткой, чтобы сдерживать 6 бар на площади F_c
-c_spring = 2200.0 
+c_spring = 1000.0 
 # Преднатяг пружины автоматически рассчитывается так, чтобы клапан открылся ровно при P_open
 h_0 = (F_c*(P_open - P_atm)*rho_flow(0) - m*g)/c_spring
 
@@ -160,10 +160,10 @@ print(f"P макс = {np.max(press)/1e5:.3f} бар, P мин после отк�
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 8), sharex=True)
 
 ax1.plot(time, press/1e5, 'b-', linewidth=1.5)
-ax1.axhline(P_open/1e5, color='r', ls='--', label='P_open (6 бар)')
-ax1.axhline(P_init/1e5, color='k', ls=':', label='P_init (5 бар)')
+ax1.axhline(P_open/1e5, color='r', ls='--', label='P_open ')
+ax1.axhline(P_init/1e5, color='k', ls=':', label='P_init')
 ax1.set_ylabel('Давление (бар)'); ax1.grid(); ax1.legend(loc='upper right')
-ax1.set_title('Динамика клапана: старт с 5 бар, открытие на 6 бар')
+# ax1.set_title('Динамика клапана: старт с 5 бар, открытие на 6 бар')
 
 ax2.plot(time, lift*1000, 'r-', linewidth=1.5)
 ax2.set_ylabel('Подъем золотника (мм)'); ax2.set_xlabel('Время (с)'); ax2.grid()

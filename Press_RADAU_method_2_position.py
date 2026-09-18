@@ -55,7 +55,7 @@ def solve_T(n_g, n_l, T_guess):
     return T
 
 # ================= Параметры системы =================
-V_total = 1.30; fill_fraction = 0.18; Q_dot = 30000.0
+V_total = 1.30; fill_fraction = 0.18; Q_dot = 20000.0
 t_end = 40.0
 
 # ================= Клапан =================
@@ -64,7 +64,7 @@ m = 0.5; eta = 30.0
 P_open = 1.22e5; P_full = 1.34e5
 h_max = 0.25*d_c; h_stop = 0.30*d_c
 
-c_spring = 1500.0
+c_spring = 2200.0
 h_0 = (F_c*(P_open - P_atm)*rho_flow(0) - m*g)/c_spring
 
 # ================= Начальные условия =================
