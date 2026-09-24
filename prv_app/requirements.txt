@@ -1,0 +1,6 @@
+numpy
+scipy
+matplotlib
+CoolProp
+PySide6
+pyinstaller
